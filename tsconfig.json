@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ],
     "outDir": "./dist/",
     // Подсвечивает все места где не указан тип
     // Однако это не означает, что теперь вовсе нельзя использовать any.
@@ -16,6 +20,9 @@
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
       ],
       "shared/*": [
         "src/shared/*"
@@ -55,6 +62,14 @@
     // import React from 'react';
     "allowSyntheticDefaultImports": true
   },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "@rainbow-me/rainbowkit/styles.css";
-import '@styles/index.scss'
 
 import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 
@@ -9,8 +8,9 @@ import { http, WagmiProvider } from "wagmi";
 
 import { mainnet, sepolia } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import App from "./app/App";
 import { BrowserRouter } from "react-router-dom";
+import App from "./app/App";
+import ThemeProvider from "./app/providers/ThemeProvider/ui/ThemeProvider";
 
 const config = getDefaultConfig({
   appName: "Wallet Playground",
@@ -31,7 +31,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <QueryClientProvider client={queryClient}>
         <WagmiProvider config={config}>
           <RainbowKitProvider>
-            <App />
+            <ThemeProvider>
+              <App />
+            </ThemeProvider>
           </RainbowKitProvider>
         </WagmiProvider>
       </QueryClientProvider>

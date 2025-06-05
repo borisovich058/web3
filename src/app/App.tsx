@@ -3,6 +3,7 @@ import { classNames } from "../shared/lib/classNames/classNames";
 import { Sidebar } from "../widgets/Sidebar";
 import Navbar from "@/widgets/Navbar/Navbar";
 import { useTheme } from "./providers/ThemeProvider/lib/useTheme";
+import "@styles/index.scss";
 
 function App() {
   const { theme } = useTheme();

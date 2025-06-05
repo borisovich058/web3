@@ -13,7 +13,7 @@ interface NavbarProps extends LinkProps {
 
 const Navbar = ({ className }: NavbarProps) => {
   return (
-    <div className={classNames(cls.Navbar, {}, [className])}>
+    <div className={classNames(cls.navbar, {}, [className])}>
       <div className={classNames(cls.links, {}, [className])}>
         <AppLink to={"/"} className={classNames(cls.mainLink, {}, [className])}>
           Главная страница

@@ -1,15 +1,19 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import svgr from 'vite-plugin-svgr';
+import svgr from "vite-plugin-svgr";
 import path from "path";
 import rollupNodePolyFill from "rollup-plugin-node-polyfills";
 import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
 import { NodeModulesPolyfillPlugin } from "@esbuild-plugins/node-modules-polyfill";
 
 export default defineConfig({
- plugins: [
+  plugins: [
     react(),
-    svgr(),
+    svgr({
+      svgrOptions: {
+        icon: true,
+      },
+    }),
   ],
 
   resolve: {
@@ -62,6 +66,10 @@ export default defineConfig({
   },
 
   css: {
+    modules: {
+      localsConvention: "camelCaseOnly",
+      generateScopedName: "[name]__[local]___[hash:base64:5]",
+    },
     preprocessorOptions: {
       scss: {
         additionalData: `@use "@styles/variable/global" as *;

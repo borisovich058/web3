@@ -19,7 +19,7 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (props) => {
   return (
     <Button
       theme={ThemeButton.CLEAR}
-      className={classNames(cls.ThemeSwitcher, {}, [className, theme])}
+      className={classNames(cls.themeSwitcher, {}, [className, theme])}
       {...otherProps}
       onClick={toggleTheme}
     >
